@@ -19,6 +19,7 @@ npm info "$PKG@latest" peerDependencies --json | command sed 's/[\{\},]//g ; s/:
 $ node_modules/.bin/eslint --fix .
 ```
 
+
 ### Specifications
 Now, let's think about what this application should do:
 1. Set up authentication for your apartment mates so no one else can have access data.
@@ -29,7 +30,7 @@ Now, let's think about what this application should do:
 React: front-end library
 Redux: middleware
 Firebase: backend (noSQL) document based
-
+Sparkpost or Sendgrid
 
 ### Implementation
 Authentication will be handled by [Firebase Auth](https://firebase.google.com/docs/auth/). Save ton of time.
@@ -56,11 +57,13 @@ There are two ways.
 2. Firebase Functions (Faas):
   Do the same thing as above but its business logic will be contained in stateless functions.
 
-Second method would be ideal as a better, scalable microservice solution because Firebase Functions provides 
+~~Second method would be ideal as a better, scalable microservice solution because Firebase Functions provides 
 logging services that we can keep track of. Plus, you can integrate any other Google Cloud's services such as Cloud Pub/Sub into your
-app with ease.
+app with ease.~~
 
-However, because only small amount of users (there won't be 100 people or more that are sharing an apartment unit) will be using this website (in my case, 3 people), I decided to go with **first method: Client side with Firebase**. I believe in engineering things based on the use case.
+~~However, because only small amount of users will be using this website (in my case, 3 people), I decided to go with **first method: Client side with Firebase**.~~ 
+
+I decided to go with second method since I will be triggering to send out randomized chores weekly using PubSub API from Google Appengine.
 
 
 
