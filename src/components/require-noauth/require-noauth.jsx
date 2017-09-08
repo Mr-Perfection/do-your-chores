@@ -12,7 +12,10 @@ const RequireNoAuthRoute = ({component: Component, authenticated, ...rest}) => (
           state: { from: props.location },
         }}/>
       ) : (
-        <Component {...props} />
+        <div style={{ height: '100%' }}>
+          <div style={{ zIndex: '-3', position: 'fixed', height: '100%', width: '100%', background: 'linear-gradient(141deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%),no-repeat'}} />
+          <Component {...props} />
+        </div>
       )
     }}
   />
