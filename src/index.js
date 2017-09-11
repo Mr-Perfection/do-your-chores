@@ -17,6 +17,15 @@ function render(Component) {
     <Provider store={store}>
       <ConnectedRouter history={history}>
         <div>
+          <div style={{ zIndex: '-3',
+            position: 'fixed',
+            width: '100%',
+            height: '100%',
+            top: '0',
+            left: '0',
+            right: '0',
+            bottom: '0',
+            background: 'linear-gradient(141deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%),no-repeat'}} />
           <Component />
         </div>
       </ConnectedRouter>
