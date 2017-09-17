@@ -11,6 +11,7 @@ export const AuthState = new Record({
 export function authReducer(state = new AuthState(), { payload, type }) {
   switch (type) {
     case INIT_AUTH:
+      return state;
     case SIGN_IN_SUCCESS:
       return state.merge({
         authenticated: !!payload,

@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { ConnectedRouter } from 'react-router-redux';
 
+import { initAuth } from './auth';
 import history from './history';
 import './index.css';
 import App from './components/app';
@@ -34,6 +35,7 @@ function render(Component) {
   );
 }
 
+// live reload check Glossary in my README.
 if (module.hot) {
   module.hot.accept('./components/app', () => {
     render(require('./components/app').default);
@@ -42,4 +44,6 @@ if (module.hot) {
 
 registerServiceWorker();
 
-render(App);
+initAuth(store.dispatch)
+  .then(() => render(App))
+  .catch(error => console.error(error));

@@ -15,9 +15,10 @@ export default (initialState = {}) => {
   }
 
   const store = createStore(reducers, initialState, middleware);
-
+  console.log('store is', store);
   if (module.hot) {
     module.hot.accept('./reducers', () => {
+      // hot reloading for Redux
       store.replaceReducer(require('./reducers').default);
     });
   }
