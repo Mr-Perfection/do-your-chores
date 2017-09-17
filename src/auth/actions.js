@@ -1,25 +1,10 @@
-// import firebase from 'firebase';
-// import {
-//   INIT_AUTH,
-//   SIGN_IN_ERROR,
-//   SIGN_IN_SUCCESS,
-//   SIGN_OUT_SUCCESS
-// } from './action-types';
-
-// export function initAuth(user) {
-//   return {
-//     type: INIT_AUTH,
-//     payload: user
-//   };
-// }
-
 import firebase from 'firebase';
 import { firebaseAuth } from '../../src/firebase';
 import {
   INIT_AUTH,
   SIGN_IN_ERROR,
   SIGN_IN_SUCCESS,
-  SIGN_OUT_SUCCESS
+  SIGN_OUT_SUCCESS,
 } from './action-types';
 
 
@@ -56,8 +41,11 @@ export function signInSuccess(result) {
 }
 
 
-export function signInWithGithub() {
-  return authenticate(new firebase.auth.GithubAuthProvider());
+// export function signInWithGithub() {
+//   return authenticate(new firebase.auth.GithubAuthProvider());
+// }
+export function signInWithFacebook() {
+  return authenticate(new firebase.auth.FacebookAuthProvider());
 }
 
 

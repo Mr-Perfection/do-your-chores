@@ -1,0 +1,8 @@
+.sign-in .sign-in-buttons .ant-btn {
+  width: 100%;
+}
+
+.container .sign-in .sign-in-buttons {
+  margin: auto;
+  width: 250px;
+}
