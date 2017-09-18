@@ -5,11 +5,13 @@ import { withRouter } from 'react-router-dom';
 import { authActions } from '../../../src/auth';
 import { SignInButton } from '../../../src/components/button';
 
+import './styles/sign-in.css';
+
 const SignInPage = ({ signInWithFacebook, signInWithGoogle }) => {
   return (
     <div className="container">
       <div className="sign-in">
-        <h1 className="heading">Sign in</h1>
+        <h1 className="heading">Sign in my homies!</h1>
         <div className="sign-in-buttons">
           <SignInButton buttonName="Facebook" onClick={signInWithFacebook} />
           <SignInButton buttonName="Google" onClick={signInWithGoogle} />

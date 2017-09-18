@@ -20,7 +20,7 @@ function authenticate(provider) {
 export function initAuth(user) {
   return {
     type: INIT_AUTH,
-    payload: user
+    payload: user,
   };
 }
 
@@ -58,17 +58,15 @@ export function signInWithTwitter() {
   return authenticate(new firebase.auth.TwitterAuthProvider());
 }
 
+export function signOutSuccess() {
+  return {
+    type: SIGN_OUT_SUCCESS
+  };
+}
 
 export function signOut() {
   return dispatch => {
     firebaseAuth.signOut()
       .then(() => dispatch(signOutSuccess()));
-  };
-}
-
-
-export function signOutSuccess() {
-  return {
-    type: SIGN_OUT_SUCCESS
   };
 }

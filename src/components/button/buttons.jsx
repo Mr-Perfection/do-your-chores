@@ -7,7 +7,7 @@ export function SignInButton({ buttonName, onClick }) {
   return (
     <div className={buttonName}>
       <Button onClick={() => onClick()}>
-        { buttonName }
+        Sign in with { buttonName }
       </Button>
     </div>
   );

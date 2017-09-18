@@ -2,9 +2,9 @@ import { firebaseDb } from './firebase';
 
 
 export default class FirebaseList {
-  constructor(actions, modelClass, path = null) {
+  constructor(actions, record, path = null) {
     this._actions = actions;
-    this._modelClass = modelClass;
+    this._record = record; // this is a immutable record instance.
     this._path = path;
   }
 
@@ -51,6 +51,7 @@ export default class FirebaseList {
 
     ref.once('value', () => {
       initialized = true;
+      // dispatch the successful loading chores and return chores
       emit(this._actions.onLoad(list));
     });
 
@@ -79,8 +80,10 @@ export default class FirebaseList {
   }
 
   unwrapSnapshot(snapshot) {
-    let attrs = snapshot.val();
+    const attrs = snapshot.val();
+
     attrs.key = snapshot.key;
-    return new this._modelClass(attrs);
+    // overriding the Record instance and return new Record with changed attribute.
+    return new this._record(attrs);
   }
 }

@@ -56,7 +56,7 @@ const data = [{
   choresOfTheWeek: ['Sweep and mop the floor'],
 }];
 
-export default class Chores extends Component {
+export default class Dashboard extends Component {
   constructor(props) {
     super(props);
   }

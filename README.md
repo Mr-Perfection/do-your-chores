@@ -83,4 +83,5 @@ https://github.com/r-park/todo-react-redux
 http://redux.js.org/docs/api/Store.html
 https://github.com/reactjs/react-router-redux
 https://www.youtube.com/watch?v=XCQ0ZSr-a2o Reselect tutorial
+https://facebook.github.io/immutable-js/docs/#/Record Record in Immutable.js
 
